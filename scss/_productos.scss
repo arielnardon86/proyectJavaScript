@@ -1,0 +1,68 @@
+/*Productos*/
+.carousel {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.productos {
+  text-align: center;
+  font-size: 2rem;
+  padding-top: 10px;
+  margin-top: 10px;
+  text-decoration: none;
+  a {
+    text-decoration: none;
+  }
+  a img {
+    padding-bottom: 10px;
+    flex-wrap: wrap;
+    margin-inline-start: 20px;
+    margin-top: 20px;
+    padding-top: 10px;
+    text-decoration: none !important;
+    transition: $transition;
+
+    &:hover {
+      transform: $transform;
+    }
+  }
+  
+}
+
+.wp {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 15px;
+  z-index: 2;
+  transition: $transition;
+}
+.wp:hover {
+  transform: $transform;
+}
+.productos-cards {
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  
+  @media (max-width: 980px) {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+} 
+}
+
+.row {
+  margin-top: 15px;
+  
+  @media (max-width: 980px) {
+    
+    display: block;
+    width: 100%;
+}
+}

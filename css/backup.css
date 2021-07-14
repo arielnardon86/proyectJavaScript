@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: #f5e7e3;
+    font-size: 1rem;
+    font-family: "Radley", serif;
+  }
+  
+  /*Header*/
+  .menu-container {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: #F2D0D7;
+    display: flex;
+    justify-content: left;
+    border: black;
+    z-index: 1;
+    font-size: 20px;
+    border-bottom: 5px solid #a8a8a8;
+    transition: all 1s;
+  }
+  
+  nav ul li {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 20px;
+  }
+  
+  .menu-container ul li a:hover {
+    transform: scale(1.2);
+  }
+  
+  /*Productos*/
+  .carousel {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .productos {
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 10px;
+    margin-top: 10px;
+    text-decoration: none;
+  }
+  
+  .productos a {
+    text-decoration: none;
+  }
+  
+  .productos a img {
+    padding-bottom: 10px;
+    flex-wrap: wrap;
+    margin-inline-start: 80px;
+    margin-top: 20px;
+    padding-top: 10px;
+    text-decoration: none !important;
+    transition: all 1s;
+  }
+  
+  .productos a img:hover {
+    transform: scale(1.2);
+  }
+  
+  .wp {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 15px;
+    z-index: 2;
+    transition: all 1s;
+  }
+  
+  .wp:hover {
+    transform: scale(1.2);
+  }
+  
+  /*Footer*/
+  .banner-services-footer {
+    background: #ffffff;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .verticalLine {
+    border-left: solid black;
+  }
+  
+  footer {
+    width: 100%;
+  }

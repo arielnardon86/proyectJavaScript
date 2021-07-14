@@ -1,0 +1,54 @@
+/*Footer*/
+.banner-services-footer {
+  background: #ffffff;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  p {
+    text-align: center;
+  }
+  h6 {
+    text-align: center;
+  }
+  i {
+    padding-left: 50%;
+    @media screen and (max-width: 980px) {
+      padding: 0%;;
+      }
+  }
+}
+.verticalLine {
+  border-left: solid black;
+  @media screen and (max-width: 980px) {
+    display: none;
+    }
+}
+
+footer {
+  width: 100%;
+  
+  a i {
+    transition: $transition;
+    text-decoration: none !important;
+  &:hover {
+    transform: $transform;
+  }
+}
+p {
+  transition: $transition;
+  text-decoration: none;
+&:hover {
+  transform: $transform;
+}
+}
+p a {
+  text-decoration: none;
+}
+
+}

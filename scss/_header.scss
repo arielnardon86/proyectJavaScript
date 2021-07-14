@@ -1,0 +1,39 @@
+/*Header*/
+.menu-container {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: #f2d0d7;
+  display: flex;
+  justify-content: right;
+  border: $border;
+  z-index: 1;
+  font-size: 20px;
+  border-bottom: $border-botom;
+  transition: $transition;
+
+  nav ul li {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 20px;
+    & a:hover {
+      transform: $transform;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+  a img {
+   
+    flex-wrap: wrap;
+    margin-inline-start: 15px;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    text-decoration: none !important;
+    transition: $transition;
+
+    &:hover {
+      transform: $transform;
+    }
+}
+}
