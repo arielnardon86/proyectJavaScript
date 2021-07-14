@@ -27,19 +27,19 @@ class Producto {
 
 
 let producto1 = new Producto({ nombre: "bolso matero", precio: 600, cantidad: ""})
-producto1.nombre = prompt("¿Qué producto qurés comprar")
+producto1.nombre = prompt("¿Qué producto qurés comprar? (bolso matero, kit matero o set matero)")
 producto1.precio = 600
 producto1.cantidad = prompt("Ingresa la cantidad a comprar")
 
 
 let producto2 = new Producto({ nombre: "kit matero", precio: 1000, cantidad: ""})
-producto2.nombre = prompt("¿Qué producto qurés comprar")
+producto2.nombre = prompt("¿Qué producto qurés comprar? (bolso matero, kit matero o set matero)")
 producto2.precio = 1000
 producto2.cantidad = prompt("Ingresa la cantidad a comprar")
 
 
 let producto3 = new Producto({ nombre: "set matero", precio: 500, cantidad: ""})
-producto3.nombre = prompt("¿Qué producto qurés comprar")
+producto3.nombre = prompt("¿Qué producto qurés comprar? (bolso matero, kit matero o set matero)")
 producto3.precio = 500
 producto3.cantidad = prompt("Ingresa la cantidad a comprar")
 
