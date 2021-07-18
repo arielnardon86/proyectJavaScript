@@ -57,7 +57,7 @@ function elegirProducto() {
 
 
 function verDisponibilidadProducto (nombreProducto, lista, cantidad) {
-    productoSeleccionado = lista.find((p) => p.nombre == nombreProducto) 
+    productoSeleccionado = lista.find((p) => p.nombre == nombreProducto.toUpperCase()) 
     let stock = verificarStock(productoSeleccionado.stock, cantidad)
     
     if (productoSeleccionado && stock) {
