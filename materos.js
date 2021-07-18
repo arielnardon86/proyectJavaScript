@@ -1,48 +1,94 @@
-class Producto {
-    constructor(nombre, precio, cantidad) {
-        this.nombre = nombre;
-        this.precio = precio;
-        this.cantidad = parseInt(cantidad);
+const listadoProductos = [{nombre: "BOLSO MATERO", precio: 600, id:1, stock: 20,},
+{nombre: "KIT MATERO", precio: 1000, id:2, stock: 20,},
+{nombre: "SET MATERO", precio: 500, id:3, stock: 20,},
+]
+
+class ProductoAñadido {
+    constructor(producto, cantidad) {
+        this.nombre = producto.nombre;
+        this.precio = producto.precio;
+        this.id = producto.id;
+        this.cantidad = cantidad;
+        this.subtotal = producto.precio * cantidad
+    }   
+}
+
+let productoIngresado;
+let cantidadIngresada;
+let productoSeleccionado;
+let elegirNuevoProducto;
+const carritoCompras = [];
+
+procesoCompleto()
+while(elegirNuevoProducto == "SI") {
+    procesoCompleto()
+}
+
+console.log(carritoCompras)
+verCarrito()
+
+function procesoCompleto () {
+    elegirProducto()
+    const disponibilidad = verDisponibilidadProducto(productoIngresado, listadoProductos, cantidadIngresada)
+    if(disponibilidad) {
+    
+       let agregar = prompt("¿Desea agregar el producto al carrito? SI / NO")
+       if (agregar.toUpperCase() == "SI") {    
+           let item = new ProductoAñadido (productoSeleccionado, cantidadIngresada)
+           agregarItem(item)
+           elegirNuevoProducto = prompt("¿Quiere seleccionar otro producto? SI / NO")
+        
+       } else {
+           elegirNuevoProducto = prompt("¿Quiere seleccionar otro producto? SI / NO")
+       } 
+    } else {
+        console.log("Disculpa el producto elegido no esta disponible")
     }
 
-    
+}
 
-    comprarProducto() {
-        if 
-            (this.nombre === "bolso matero") {
-                alert("Usted compró " + producto1.cantidad + " " + producto1.nombre + " y el costo final es de: " + "$" + parseInt(producto1.cantidad * producto1.precio))
-        } else if
-            (this.nombre === "kit matero") {
-                alert("Usted compró " + producto2.cantidad + " " + producto2.nombre + " y el costo final es de: " + "$" + parseInt(producto2.cantidad * producto2.precio))
-        } else if 
-            (this.nombre === "set matero") {
-                alert("Usted compró " + producto3.cantidad + " " + producto3.nombre + " y el costo final es de: " + "$" + parseInt(producto3.cantidad * producto3.precio))
-        } else {
-                alert("Producto no encontrado")
-        }
+function elegirProducto() {
+    do{
+        productoIngresado = prompt("Elige un producto: BOLSO MATERO, KIT MATERO o SET MATERO");
+        cantidadIngresada = parseInt(prompt("Ingresa la cantidad a comprar"))
+        
+     } while(productoIngresado == "" || productoIngresado == null || !isNaN(productoIngresado) )
+}
+
+
+function verDisponibilidadProducto (nombreProducto, lista, cantidad) {
+    productoSeleccionado = lista.find((p) => p.nombre == nombreProducto) 
+    let stock = verificarStock(productoSeleccionado.stock, cantidad)
+    
+    if (productoSeleccionado && stock) {
+        return true
+    } else if (!productoSeleccionado) {
+        alert("El producto seleccionado no existe")
+    } else if (!stock) {
+        alert("El producto " + nombreProducto + " no cuenta con disponibilidad")
+
+    }
+}
+
+function verificarStock(stockProducto, cantidad){
+    if (stockProducto >= cantidad){
+        return true
+    } else {
+        return false
     }
 }
 
 
+function agregarItem(itemAagregar) {
+    carritoCompras.push(itemAagregar)
+}
 
-
-let producto1 = new Producto({ nombre: "bolso matero", precio: 600, cantidad: ""})
-producto1.nombre = prompt("¿Qué producto qurés comprar? (bolso matero, kit matero o set matero)")
-producto1.precio = 600
-producto1.cantidad = prompt("Ingresa la cantidad a comprar")
-
-
-let producto2 = new Producto({ nombre: "kit matero", precio: 1000, cantidad: ""})
-producto2.nombre = prompt("¿Qué producto qurés comprar? (bolso matero, kit matero o set matero)")
-producto2.precio = 1000
-producto2.cantidad = prompt("Ingresa la cantidad a comprar")
-
-
-let producto3 = new Producto({ nombre: "set matero", precio: 500, cantidad: ""})
-producto3.nombre = prompt("¿Qué producto qurés comprar? (bolso matero, kit matero o set matero)")
-producto3.precio = 500
-producto3.cantidad = prompt("Ingresa la cantidad a comprar")
-
-console.log();(producto1.comprarProducto());
-console.log();(producto2.comprarProducto());
-console.log();(producto3.comprarProducto());
+function verCarrito() {
+    for (let i = 0 ; i < carritoCompras.length; i++){
+        console.log("Producto: " + carritoCompras[i].nombre + ". Cantidad: " + carritoCompras[i].cantidad)
+    }
+    let totalCarrito = carritoCompras.reduce((currentTotal, producto) => {
+        return producto.subtotal + currentTotal;
+      }, 0);
+      alert("El total de tu compra es: " + "$" + totalCarrito)
+}
