@@ -1,0 +1,20 @@
+[
+    {
+      "precio": 300,
+      "id": 1,
+      "title": "Contenedor Grande",
+      "thumbnailUrl": "http://imgfz.com/i/lDTSViq.png"
+    },
+    {
+      "precio": 250,
+      "id": 2,
+      "title": "Contenedor Mediano",
+      "thumbnailUrl": "http://imgfz.com/i/n08dhP2.png"
+    },
+    {
+      "precio": 200,
+      "id": 3,
+      "title": "Contenedor Chico",
+      "thumbnailUrl": "http://imgfz.com/i/riSKBTE.png"
+    }
+]
