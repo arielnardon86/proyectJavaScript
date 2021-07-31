@@ -15,5 +15,8 @@
     "url": "https://github.com/arielnardon86/Sagi_repo/issues"
   },
   "homepage": "https://github.com/arielnardon86/Sagi_repo#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "mercadopago": "^1.5.8"
+  }
 }
