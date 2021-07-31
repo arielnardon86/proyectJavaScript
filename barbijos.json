@@ -1,0 +1,21 @@
+[
+    {
+      "precio": 200,
+      "id": 16,
+      "title": "Barbijo Mujer",
+      "thumbnailUrl": "http://imgfz.com/i/u6P0rRj.png"
+    },
+    {
+      "precio": 200,
+      "id": 17,
+      "title": "Barbijo Liso",
+      "thumbnailUrl": "http://imgfz.com/i/aFLVuJ5.png"
+    },
+    {
+      "precio": 200,
+      "id": 18,
+      "title": "Barbijo Kids",
+      "thumbnailUrl": "http://imgfz.com/i/UTsxNub.png"
+    }
+   
+]

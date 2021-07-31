@@ -1,0 +1,21 @@
+[
+    {
+      "precio": 500,
+      "id": 10,
+      "title": "Kit Nececer (x2)",
+      "thumbnailUrl": "http://imgfz.com/i/Mztm1kg.png"
+    },
+    {
+      "precio": 300,
+      "id": 11,
+      "title": "Nececer Grande",
+      "thumbnailUrl": "http://imgfz.com/i/4HEvS1x.png"
+    },
+    {
+      "precio": "250",
+      "id": 12,
+      "title": "Nececer Chico",
+      "thumbnailUrl": "http://imgfz.com/i/TbRyPut.png"
+    }
+   
+]
