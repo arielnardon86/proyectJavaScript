@@ -47,6 +47,25 @@ body {
   transform: scale(1.2);
 }
 
+.cart {
+  position: relative;
+}
+
+#cart_menu_num {
+  position: absolute;
+  top: 0;
+  left: 55%;
+  background: red;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 2px;
+}
+
 /*Productos*/
 .carousel {
   display: flex;

@@ -15,7 +15,7 @@ items.addEventListener('click', e => { btnAumentarDisminuir(e) })
 
 // Traer productos
 const fetchData = async () => {
-    const res = await fetch('contenedores.json');
+    const res = await fetch('materos.json');
     const data = await res.json()
     // console.log(data)
     pintarCards(data)
@@ -73,7 +73,7 @@ const pintarCarrito = () => {
         //botones
         templateCarrito.querySelector('.btn-info').dataset.id = producto.id
         templateCarrito.querySelector('.btn-danger').dataset.id = producto.id
-
+        
         const clone = templateCarrito.cloneNode(true)
         fragment.appendChild(clone)
     })
@@ -143,3 +143,6 @@ document.addEventListener('DOMContentLoaded', e => {
         pintarCarrito()
     }
 });
+function myFunction() {
+    swal("Producto agregado al carrito", "", "success");
+  }
