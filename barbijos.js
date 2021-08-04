@@ -4,6 +4,7 @@ const footer = document.getElementById('footer')
 const templateCard = document.getElementById('template-card').content
 const templateFooter = document.getElementById('template-footer').content
 const templateCarrito = document.getElementById('template-carrito').content
+
 const fragment = document.createDocumentFragment()
 let carrito = {}
 
@@ -69,7 +70,7 @@ const pintarCarrito = () => {
         templateCarrito.querySelectorAll('td')[0].textContent = producto.title
         templateCarrito.querySelectorAll('td')[1].textContent = producto.cantidad
         templateCarrito.querySelector('span').textContent = producto.precio * producto.cantidad
-        
+
         //botones
         templateCarrito.querySelector('.btn-info').dataset.id = producto.id
         templateCarrito.querySelector('.btn-danger').dataset.id = producto.id
@@ -100,7 +101,7 @@ const pintarFooter = () => {
 
     templateFooter.querySelectorAll('td')[0].textContent = nCantidad
     templateFooter.querySelector('span').textContent = nPrecio
-
+    
     const clone = templateFooter.cloneNode(true)
     fragment.appendChild(clone)
 
@@ -143,6 +144,11 @@ document.addEventListener('DOMContentLoaded', e => {
         pintarCarrito()
     }
 });
+
 function myFunction() {
     swal("Producto agregado al carrito", "", "success");
   }
+
+  
+  
+  
