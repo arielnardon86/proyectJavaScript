@@ -4,7 +4,7 @@ const footer = document.getElementById('footer')
 const templateCard = document.getElementById('template-card').content
 const templateFooter = document.getElementById('template-footer').content
 const templateCarrito = document.getElementById('template-carrito').content
-
+var numero = 0
 const fragment = document.createDocumentFragment()
 let carrito = {}
 
@@ -40,8 +40,10 @@ const addCarrito = e => {
         // console.log(e.target.dataset.id)
         // console.log(e.target.parentElement)
         setCarrito(e.target.parentElement)
-    }
+        
+         }
     e.stopPropagation()
+    
 }
 
 const setCarrito = item => {
@@ -77,10 +79,13 @@ const pintarCarrito = () => {
         
         const clone = templateCarrito.cloneNode(true)
         fragment.appendChild(clone)
+
+        //$("span").html(producto.cantidad)
     })
     items.appendChild(fragment)
 
     pintarFooter()
+    
     localStorage.setItem('carrito', JSON.stringify(carrito))
 }
 
@@ -97,14 +102,14 @@ const pintarFooter = () => {
     // sumar cantidad y sumar totales
     const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0)
     const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0)
-    // console.log(nPrecio)
-
+    // Contador de productos al lado del carrito
+    $("span").html(nCantidad)
     templateFooter.querySelectorAll('td')[0].textContent = nCantidad
     templateFooter.querySelector('span').textContent = nPrecio
     
     const clone = templateFooter.cloneNode(true)
     fragment.appendChild(clone)
-
+    
     footer.appendChild(fragment)
 
     const boton = document.querySelector('#vaciar-carrito')
@@ -149,6 +154,5 @@ function myFunction() {
     swal("Producto agregado al carrito", "", "success");
   }
 
-  
   
   
