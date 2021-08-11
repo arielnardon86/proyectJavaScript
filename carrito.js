@@ -146,3 +146,7 @@ document.addEventListener('DOMContentLoaded', e => {
         pintarCarrito()
     }
 });
+//Funcion para ocultar el contador de productos al presionar "Vaciar Todo"
+function ocultar() {
+    $("span1").fadeOut();
+  }

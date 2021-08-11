@@ -136,6 +136,13 @@ body {
   }
 }
 
+.fb-root {
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 /*Footer*/
 .banner-services-footer {
   background: #ffffff;
