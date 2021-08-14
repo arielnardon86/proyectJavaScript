@@ -16,7 +16,7 @@ items.addEventListener('click', e => { btnAumentarDisminuir(e) })
 
 // Traer productos
 const fetchData = async () => {
-    const res = await fetch('accesorios.json');
+    const res = await fetch('contenedores.json');
     const data = await res.json()
     // console.log(data)
     pintarCards(data)
@@ -41,9 +41,8 @@ const addCarrito = e => {
         // console.log(e.target.parentElement)
         setCarrito(e.target.parentElement)
         
-         }
+    }
     e.stopPropagation()
-    
 }
 
 const setCarrito = item => {
@@ -72,20 +71,17 @@ const pintarCarrito = () => {
         templateCarrito.querySelectorAll('td')[0].textContent = producto.title
         templateCarrito.querySelectorAll('td')[1].textContent = producto.cantidad
         templateCarrito.querySelector('span').textContent = producto.precio * producto.cantidad
-
+        
         //botones
         templateCarrito.querySelector('.btn-info').dataset.id = producto.id
         templateCarrito.querySelector('.btn-danger').dataset.id = producto.id
-        
+
         const clone = templateCarrito.cloneNode(true)
         fragment.appendChild(clone)
-
-        //$("span").html(producto.cantidad)
     })
     items.appendChild(fragment)
 
     pintarFooter()
-    
     localStorage.setItem('carrito', JSON.stringify(carrito))
 }
 
@@ -94,7 +90,7 @@ const pintarFooter = () => {
     
     if (Object.keys(carrito).length === 0) {
         footer.innerHTML = `
-        <th scope="row" colspan="5">Carrito vacío con innerHTML</th>
+        <th scope="row" colspan="5">Carrito vacío</th>
         `
         return
     }
@@ -103,13 +99,14 @@ const pintarFooter = () => {
     const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0)
     const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0)
     // Contador de productos al lado del carrito
-    $("span").html(nCantidad)
+    $("span1").html(nCantidad)
+
     templateFooter.querySelectorAll('td')[0].textContent = nCantidad
     templateFooter.querySelector('span').textContent = nPrecio
-    
+
     const clone = templateFooter.cloneNode(true)
     fragment.appendChild(clone)
-    
+
     footer.appendChild(fragment)
 
     const boton = document.querySelector('#vaciar-carrito')
@@ -149,10 +146,3 @@ document.addEventListener('DOMContentLoaded', e => {
         pintarCarrito()
     }
 });
-
-function myFunction() {
-    swal("Producto agregado al carrito", "", "success");
-  }
-
-  
-  
