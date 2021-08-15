@@ -150,3 +150,7 @@ document.addEventListener('DOMContentLoaded', e => {
 function ocultar() {
     $("span1").fadeOut();
   }
+
+  function compraExitosa() {
+    swal("Tu compra finalizó exitosamente", "", "success");
+  }

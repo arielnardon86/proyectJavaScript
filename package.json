@@ -17,6 +17,7 @@
   "homepage": "https://github.com/arielnardon86/Sagi_repo#readme",
   "description": "",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "mercadopago": "^1.5.8"
   }
 }
