@@ -8,9 +8,7 @@ var numero = 0
 const fragment = document.createDocumentFragment()
 let carrito = {}
 
-// Eventos
-// El evento DOMContentLoaded es disparado cuando el documento HTML ha sido completamente cargado y parseado
-//document.addEventListener('DOMContentLoaded', e => { fetchData() });
+//Alert al darle click cuando se agrega al carrito
 cards.addEventListener('click', e => { addCarrito(e) });
 items.addEventListener('click', e => { btnAumentarDisminuir(e) })
 

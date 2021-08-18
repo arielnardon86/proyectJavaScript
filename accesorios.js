@@ -8,9 +8,7 @@ var numero = 0
 const fragment = document.createDocumentFragment()
 let carrito = {}
 
-// Eventos
-// El evento DOMContentLoaded es disparado cuando el documento HTML ha sido completamente cargado y parseado
-//document.addEventListener('DOMContentLoaded', e => { fetchData() });
+// Se crean cards de productos, llamadas desde el Json
 cards.addEventListener('click', e => { addCarrito(e) });
 items.addEventListener('click', e => { btnAumentarDisminuir(e) })
 
@@ -79,8 +77,6 @@ const pintarCarrito = () => {
         
         const clone = templateCarrito.cloneNode(true)
         fragment.appendChild(clone)
-
-        //$("span").html(producto.cantidad)
     })
     items.appendChild(fragment)
 
@@ -149,7 +145,7 @@ document.addEventListener('DOMContentLoaded', e => {
         pintarCarrito()
     }
 });
-
+//Alert al darle click cuando se agrega al carrito
 function myFunction() {
     swal("Producto agregado al carrito", "", "success");
   }
